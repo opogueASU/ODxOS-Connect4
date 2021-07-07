@@ -1,0 +1,48 @@
+/******************************************************************************
+
+#include <stdio.h>
+
+int main()
+{
+/****************************
+Connect 4
+
+6 x 7 matrix
+Player Input
+Display
+Win Condition
+Updating Matrix
+
+Classes, Functions
+
+
+
+
+/*********************************
+
+// array would be char array[7][6]
+// can set everything to a space by default
+// can easily select columns
+
+// Get player input through >> cin
+// Player can only choose a column
+// Change space to player char in array
+
+    /*Display
+    std::cout << " **********CONNECT FOUR***********" << std::endl;
+    std::cout << "   (1) (2) (3) (4) (5) (6) (7) "    << std::endl;
+    std::cout << "**|   |   |   | O | X |   |   |**"  << std::endl;
+    std::cout << "**|   |   |   | X | O |   |   |**"  << std::endl;
+    std::cout << "**|   |   |   | O | X |   |   |**"  << std::endl;
+    std::cout << "**|   |   |   | O | X |   |   |**"  << std::endl;
+    std::cout << "**|   |   | O | X | O |   |   |**"  << std::endl;
+    std::cout << "**| X | O | X | X | O |   |   |**"  << std::endl;
+    std::cout << " ***********CONNECT FOUR***********" << std::endl;
+   
+    
+    
+    // Check board vertically
+    // Check Stack_4 horizontally and diagonally(L and R)
+    // recursive update X -> left and X-> right
+    // 
+    // if 4 in a row player wins
