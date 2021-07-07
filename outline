@@ -2,6 +2,17 @@
 
 #include <stdio.h>
 
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+#include <tuple>
+#include <random>
+// Note: cout+ handles the input and output as the streams of bytes are sent and received
+using the namespace std;
+
+
+
+
 int main()
 {
 /****************************
