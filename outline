@@ -32,11 +32,19 @@ Classes, Functions
 /*********************************
 
 // array would be char array[7][6]
+char A[6];
+char B[6];
+char C[6];
+char D[6];
+char E[6];
+char F[6];
+
 // can set everything to a space by default
 // can easily select columns
-
+-
+//loop thoughout the whole game to untill "4 in a row "function is true
 // Get player input through >> cin
-// Player can only choose a column
+// Player can only choose a column-which is an array
 // Change space to player char in array
 
     /*Display
