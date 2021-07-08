@@ -1,0 +1,8 @@
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+#include <tuple>
+#include <random>
+
+// cout+  will handle the input and the output as a stream of bytes that are sent and received.  
+Also it will use namespace std;
