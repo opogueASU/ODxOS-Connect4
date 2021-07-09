@@ -114,6 +114,7 @@ cin>>column;
 cout<<"Player 2 Select character of each column"<<endl;
 cin>>column;
 //switch places the players move in each column/array
+    
     switch (column){
     case 'A': move(a,player_two);
         break;
