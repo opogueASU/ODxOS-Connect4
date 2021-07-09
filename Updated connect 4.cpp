@@ -124,6 +124,13 @@ bool check () {
 }
 
 int main() {
+ /**********************************/
+  int playerNum=1;
+  bool player2;
+  cout << "Press 0 to play against AI or Press 1 to add a Player 2: " << endl;
+  cin >> player2;
+  cout<< "\n\n";
+/**********************************/  
   cout << "------------------------------------" << endl;
   cout << "         WELCOME TO CONNECT 4!      " << endl;
   cout << "------------------------------------" << endl;
@@ -131,24 +138,48 @@ int main() {
   ABBoard();
   cout << endl << "Rules of the Game:\n";
   cout << "Step 1: Human Player will be labeled X " << endl;
-  cout << "Step 2. The AI player will drop the pieces labeled O." << endl;
+  cout << "Step 2. The AI player(or Player 2) will drop the pieces labeled O." << endl;
   cout << "Step 3. Pick a column to drop your piece.  For example, numbers 1-7" << endl;
   cout << "4. Keep dropping pieces until you are the AI gets Connect 4!!" << endl;
   bool human;
   bool result;
   while (true) {
-    cout << endl <<"You Played: ";
+    cout << endl <<"Player"<<playerNum<<" input: ";//**//
     human = true;
     int column = pick();
+       /**********************************/
+    while ( board[0][column-1] != '-' ){
+        cout << "Column Full, Try again: ";
+        column = pick();
+    }
+    /************************************/
     int row;
     tie(row, column) = decision(column, human);
-    board[row][column] = 'X';
+/**************************************/
+    if (player2){
+        if (playerNum==1){
+            board[row][column] = 'X';
+        }
+        else{
+            board[row][column] = 'O';
+        }
+    }
+    else{
+        board[row][column] = 'X';
+    }
+    /*************************************/
+
     printBoard();
     result = check();
     if (result == true){
-      cout << "Congratulations, you have won and defeated the Artificial Intelligence"<< endl;
+      cout << "Congratulations, Player"<< playerNum  << " have won the game" << endl;
       break;
     }
+    /**************************************/
+    if (player2){
+      playerNum = 2 - playerNum +1;}
+    /*************************************/
+    if (!player2) {//**//
     human = false;
     cout << "Your Artificial Intelligence Opponent Plays:" << endl;
     tie(row, column) = decision(column, human);
@@ -159,6 +190,7 @@ int main() {
       cout << "The AI has won! It was a good game though.  Try Again!" << endl;
       break;
     }
+   }//**//
   }
   return 0;
 }
