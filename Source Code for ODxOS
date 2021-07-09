@@ -35,3 +35,25 @@ int pick() {
   cin >> column;
   return column; 
 }
+
+
+
+tuple<int, int> decision(int column, bool human) {
+  column = column -1;
+  if (human == 1) {
+    for (int row=5; row>-1 ; row--) {
+      if (board[row][column] == '-') {
+        return make_tuple(row, column); 
+      }
+    }
+  }
+  else {
+    srand(time(0));
+    int Aicolumn = (rand() % 6) + 1;
+    for (int row=5; row>-1; row--) {
+      if (board[row][Aicolumn] == '-'){
+        return make_tuple(row, Aicolumn);
+      }
+    }
+  }
+}
