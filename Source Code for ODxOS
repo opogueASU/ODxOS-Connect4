@@ -4,5 +4,6 @@
 #include <tuple>
 #include <random>
 
-// cout+  Will be used to handle the input and the output as a stream of bytes that are sent and received.  Also, it will use namespace std;
+// cout+  Will be used to handle the input and the output as a stream of bytes that are sent and received. 
+using namespace std;
 
