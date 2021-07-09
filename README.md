@@ -34,3 +34,9 @@ If the turn counter is the final one and no connect fours have been found, then 
 
 Display Board before and after each turn
 Update the board and display it for the next player every turn.
+
+
+There is an alternate version of the Connect 4 game where you will play against an AI player.
+Human player will enter in 1-7 for the colum that they will like their piece placed.
+The AI player will go automatically.
+Based on the input from the both players will determine who is the winner. 
