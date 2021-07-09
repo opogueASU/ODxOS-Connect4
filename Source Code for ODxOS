@@ -147,3 +147,28 @@ int main() {
   bool result;
   while (true) {
 
+    cout << endl <<"You Played: ";
+    human = true;
+    int column = pick();
+    int row;
+    tie(row, column) = decision(column, human);
+    board[row][column] = 'X';
+    printBoard();
+    result = check();
+    if (result == true){
+      cout << "Congratulations, you have won and defeated the Artificial Intelligence"<< endl;
+      break;
+    }
+    human = false;
+    cout << "Your Artificial Intelligence Opponent Plays:" << endl;
+    tie(row, column) = decision(column, human);
+    board[row][column] = 'O';
+    printBoard();
+    result = check();
+    if (result == true){
+      cout << "The AI has won! It was a good game though.  Try Again!" << endl;
+      break;
+    }
+  }
+  return 0;
+}
