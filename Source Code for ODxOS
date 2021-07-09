@@ -57,3 +57,56 @@ tuple<int, int> decision(int column, bool human) {
     }
   }
 }
+
+
+
+bool check () {
+  for (int a=3; a< 6; a++){
+    for (int b=0; b < 7; b++){
+      if (board[a][b] == 'X' 
+          and board[a][b] == board[a-1][b]
+          and board[a][b] == board[a-2][b]
+          and board[a][b] == board[a-3][b]){
+        return true;
+      }
+      else if (board[a][b] == 'X' 
+          and board[a][b] == board[a-1][b]
+          and board[a][b] == board[a-2][b]
+          and board[a][b] == board[a-3][b]){
+        return true;
+      }
+    }
+      
+  } 
+  for (int a=0; a< 6; a++){
+    for(int b=0; b< 4; b++){
+      if (board[a][b] == 'X'
+          and board[a][b] == board[a][b+1]
+          and board[a][b] == board[a][b+2]
+          and board[a][b] == board[a][b+3]){
+        return true;     
+      }
+      else if (board[a][b] == 'X'
+          and board[a][b] == board[a][b+1]
+          and board[a][b] == board[a][b+2]
+          and board[a][b] == board[a][b+3]){
+        return true; 
+      }   
+    }
+  }
+  for (int a=4; a< 6; a++){
+    for(int b=0; b < 4; b++){
+      if (board[a][b] == 'X'
+          and board[a][b] == board[a-1][b+1]
+          and board[a][b] == board[a-2][b+2]
+          and board[a][b] == board[a-3][b+3]){
+        return true;     
+      }
+      else if (board[a][b] == 'X'
+          and board[a][b] == board[a-1][b+1]
+          and board[a][b] == board[a-2][b+2]
+          and board[a][b] == board[a-3][b+3]){
+        return true;     
+      }
+    }
+  }
