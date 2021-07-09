@@ -1,0 +1,41 @@
+/***************************
+This is what I was working on for a Connect4 class. But we can go with the connectfour.cpp that Kollin got and disregard this.
+***************************/
+
+
+// Created a class for the Connect 4 game
+class Connect4{
+  private:
+  
+    int countToFour; //count var to see if its four consecutive
+    char playerl,player2; // Holds the letters each player would use for the game
+    char [6][7] gameBoard; // the game is played on a 7x6 square so I just made a 7x6 matrix
+    bool gameWon;
+    int PlayerWon; // 1 "if player1 won, 2 if player2 won, 3 if its a tie , 0 if its still going on
+    
+    public:
+    
+    Connect4(); //Constructor to set default values
+    ~Connect4(); //Destructor
+    void insert(int player, int column); // funtion to Insert into the array
+    void checkBoard(); // Function to check and see if there's 4 in a row
+ 
+    void display(){                 // Display Funtion
+     // Label for the columns
+    std::cout << "   (1) (2) (3) (4) (5) (6) (7)" << std::endl;  
+   
+                              //Loop for the rows
+    
+    for(int i = 0; i<6; i++) {
+                              //Design element to start every row
+        std::cout << "**|";  
+                              // Loop to iterate down a row
+        for(int j = 0; j <7; j++) {
+                               // Dispay for the array
+        std::cout << " "<< char[5-i][j] << " |";
+        }
+                              //Design element to end every row
+        std::cout << "**" << std::endl;
+    }
+    
+};
