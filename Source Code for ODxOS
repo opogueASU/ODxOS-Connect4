@@ -110,3 +110,40 @@ bool check () {
       }
     }
   }
+  
+  
+  
+  for (int a=4; a< 6; a++){
+    for(int b=3; b < 7; b++){
+      if (board[a][b] == 'X'
+          and board[a][b] == board[a-1][b-1]
+          and board[a][b] == board[a-2][b-2]
+          and board[a][b] == board[a-3][b-3]){
+        return true;
+      }
+      else if (board[a][b] == 'O'
+          and board[a][b] == board[a-1][b-1]
+          and board[a][b] == board[a-2][b-2]
+          and board[a][b] == board[a-3][b-3]){
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+int main() {
+  cout << "------------------------------------" << endl;
+  cout << "         WELCOME TO CONNECT 4!      " << endl;
+  cout << "------------------------------------" << endl;
+  cout << "Welcome to Connect 4.  Your board has 6 Rows and 7 Columns. " << endl;
+  ABBoard();
+  cout << endl << "Rules of the Game:\n";
+  cout << "Step 1: Human Player will be labeled X " << endl;
+  cout << "Step 2. The AI player will drop the pieces labeled O." << endl;
+  cout << "Step 3. Pick a column to drop your piece.  For example, numbers 1-7" << endl;
+  cout << "4. Keep dropping pieces until you are the AI gets Connect 4!!" << endl;
+  bool human;
+  bool result;
+  while (true) {
+
