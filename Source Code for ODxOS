@@ -7,3 +7,31 @@
 // cout+  Will be used to handle the input and the output as a stream of bytes that are sent and received. 
 using namespace std;
 
+
+
+char board [6][7];
+
+void ABBoard() {
+  for (int a= 0; a < 6; a++) {
+    for (int b = 0; b < 7; b++) {
+      board[a][b] = '-';
+      cout << board [a][b]<< ' ';
+    }
+    cout << endl;
+  }
+}
+
+void printBoard() {
+  for (int a=0; a < 6; a++) {
+    for (int b = 0; b< 7; b++) {
+      cout << board[a][b] << ' ';
+    }
+    cout << endl;
+  }  
+}
+
+int pick() {
+  int column;
+  cin >> column;
+  return column; 
+}
