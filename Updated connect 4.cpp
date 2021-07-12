@@ -63,7 +63,7 @@ bool check () {
           and board[a][b] == board[a-3][b]){
         return true;
       }
-      else if (board[a][b] == 'X' 
+      else if (board[a][b] == 'O' 
           and board[a][b] == board[a-1][b]
           and board[a][b] == board[a-2][b]
           and board[a][b] == board[a-3][b]){
@@ -80,7 +80,7 @@ bool check () {
           and board[a][b] == board[a][b+3]){
         return true;     
       }
-      else if (board[a][b] == 'X'
+      else if (board[a][b] == 'O'
           and board[a][b] == board[a][b+1]
           and board[a][b] == board[a][b+2]
           and board[a][b] == board[a][b+3]){
@@ -96,7 +96,7 @@ bool check () {
           and board[a][b] == board[a-3][b+3]){
         return true;     
       }
-      else if (board[a][b] == 'X'
+      else if (board[a][b] == 'O'
           and board[a][b] == board[a-1][b+1]
           and board[a][b] == board[a-2][b+2]
           and board[a][b] == board[a-3][b+3]){
