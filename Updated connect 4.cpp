@@ -124,73 +124,88 @@ bool check () {
 }
 
 int main() {
- /**********************************/
-  int playerNum=1;
-  bool player2;
-  cout << "Press 0 to play against AI or Press 1 to add a Player 2: " << endl;
-  cin >> player2;
-  cout<< "\n\n";
-/**********************************/  
+  int players;
   cout << "------------------------------------" << endl;
   cout << "         WELCOME TO CONNECT 4!      " << endl;
   cout << "------------------------------------" << endl;
-  cout << "Welcome to Connect 4.  Your board has 6 Rows and 7 Columns. " << endl;
-  ABBoard();
-  cout << endl << "Rules of the Game:\n";
-  cout << "Step 1: Human Player will be labeled X " << endl;
-  cout << "Step 2. The AI player(or Player 2) will drop the pieces labeled O." << endl;
-  cout << "Step 3. Pick a column to drop your piece.  For example, numbers 1-7" << endl;
-  cout << "4. Keep dropping pieces until you are the AI gets Connect 4!!" << endl;
-  bool human;
-  bool result;
-  while (true) {
-    cout << endl <<"Player"<<playerNum<<" input: ";//**//
-    human = true;
-    int column = pick();
-       /**********************************/
-    while ( board[0][column-1] != '-' ){
-        cout << "Column Full, Try again: ";
-        column = pick();
-    }
-    /************************************/
-    int row;
-    tie(row, column) = decision(column, human);
-/**************************************/
-    if (player2){
-        if (playerNum==1){
-            board[row][column] = 'X';
-        }
-        else{
-            board[row][column] = 'O';
-        }
-    }
-    else{
-        board[row][column] = 'X';
-    }
-    /*************************************/
+  cout<<"Single(1) or 2-Players(2)"<<endl;
+  cout<<"Enter number: " ;
+  cin>>players;
+  if(players==1){
 
-    printBoard();
-    result = check();
-    if (result == true){
-      cout << "Congratulations, Player"<< playerNum  << " have won the game" << endl;
-      break;
+  
+    cout << "Welcome to Connect 4.  Your board has 6 Rows and 7 Columns. " << endl;
+    ABBoard();
+    cout << endl << "Rules of the Game:\n";
+    cout << "Step 1: Human Player will be labeled X " << endl;
+    cout << "Step 2. The AI player will drop the pieces labeled O." << endl;
+    cout << "Step 3. Pick a column to drop your piece.  For example, numbers 1-7" << endl;
+    cout << "4. Keep dropping pieces until you are the AI gets Connect 4!!" << endl;
+    bool human;
+    bool result;
+    while (true) {
+      cout << endl <<"You Played: ";
+      human = true;
+      int column = pick();
+      int row;
+      tie(row, column) = decision(column, human);
+      board[row][column] = 'X';
+      printBoard();
+      result = check();
+      if (result == true){
+        cout << "Congratulations, you have won and defeated the Artificial Intelligence"<< endl;
+        break;
+      }
+      human = false;
+      cout << "Your Artificial Intelligence Opponent Plays:" << endl;
+      tie(row, column) = decision(column, human);
+      board[row][column] = 'O';
+      printBoard();
+      result = check();
+      if (result == true){
+        cout << "The AI has won! It was a good game though.  Try Again!" << endl;
+        break;
+      }
     }
-    /**************************************/
-    if (player2){
-      playerNum = 2 - playerNum +1;}
-    /*************************************/
-    if (!player2) {//**//
-    human = false;
-    cout << "Your Artificial Intelligence Opponent Plays:" << endl;
-    tie(row, column) = decision(column, human);
-    board[row][column] = 'O';
-    printBoard();
-    result = check();
-    if (result == true){
-      cout << "The AI has won! It was a good game though.  Try Again!" << endl;
-      break;
+//2 player game
+  }else{
+      cout << "Welcome to Connect 4.  Your board has 6 Rows and 7 Columns. " << endl;
+    ABBoard();
+    cout << endl << "Rules of the Game:\n";
+    cout << "Player 1 will be labeled X " << endl;
+    cout << "Player 2 will be labeled O." << endl;
+    cout << "Pick a column to drop your piece.  For example, numbers 1-7" << endl;
+    cout << "4. Keep dropping pieces until a player get 4 in a row!!" << endl;
+    bool player_one;
+    bool result;
+    while (true) {
+      cout << endl <<"Player 1 Played: ";
+      player_one = true;
+      int column = pick();
+      int row;
+      tie(row, column) = decision(column, player_one);
+      board[row][column] = 'X';
+      printBoard();
+      result = check();
+      if (result == true){
+        cout << "Congratulations, Player 1 Wins!!"<< endl;
+        break;
+      }
+      player_one = false;
+      cout << "Player 2 Played:" << endl;
+      int column_two = pick();
+      int row_two;
+      tie(row_two, column_two) = decision(column_two, true);
+      board[row_two][column_two] = 'O';
+      printBoard();
+      result = check();
+      if (result == true){
+        cout << "Congratulations, Player 2 Wins!!" << endl;
+        break;
+      }
     }
-   }//**//
+
+
   }
   return 0;
 }
